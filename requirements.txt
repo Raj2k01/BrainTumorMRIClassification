@@ -1,0 +1,15 @@
+torch
+torchvision
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+pillow
+tqdm
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+httpx
+pytest
