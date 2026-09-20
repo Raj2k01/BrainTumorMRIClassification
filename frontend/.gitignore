@@ -41,3 +41,46 @@ __pycache__/
 *.pyo
 *.log
 .env
+
+
+
+
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDeploymentUserToReadBucketConfiguration",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::606163771902:user/rajasekar_dev"
+      },
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation",
+        "s3:GetBucketOwnershipControls"
+      ],
+      "Resource": "arn:aws:s3:::brain-tumor-mri-classification-react"
+    },
+    {
+      "Sid": "AllowDeploymentUserToManageFrontendObjects",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::606163771902:user/rajasekar_dev"
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": "arn:aws:s3:::brain-tumor-mri-classification-react/*"
+    },
+    {
+      "Sid": "PublicReadForStaticWebsite",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::brain-tumor-mri-classification-react/*"
+    }
+  ]
+}
